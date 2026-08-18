@@ -114,7 +114,7 @@
 |图吧工具箱|<https://www.tbtool.cn>|开源、免费的电脑硬件检测工具打包|
 |VMware|<https://www.vmware.com>|虚拟机平台|
 |Git|<https://git-scm.com>|分布式版本控制系统，用于跟踪文件修改、多人协作、代码版本管理|
-|MSYS2|<https://www.msys2.org>|Windows平台下的类Unix环境，自带包管理器```pacman```|
+|MSYS2|<https://www.msys2.org>|Windows平台下的类Unix环境，自带包管理器`pacman`|
 |Obsidian|<https://obsidian.md>|基于Markdown的笔记软件。完整支持Markdown语法，离线可用，可以用Git管理|
 |Open Interpreter|<https://github.com/openinterpreter/openinterpreter>|开源的本地代码解释器框架，接入api，支持大模型在本机直接编写、运行和修改代码（api要自己去大模型网站上买，不想折腾网络的话，推荐[深度求索](https://www.deepseek.com)）|
 |RogueCleaner|<https://github.com/aakk007/RogueCleaner>|扫描和清理流氓右键菜单、自启动、计划任务、服务、浏览器插件和文件关联残留|
