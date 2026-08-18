@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 50px;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Microsoft YaHei",
+        "Noto Sans CJK SC",
+        Arial,
+        sans-serif;
+
+    line-height: 1.7;
+    color: #24292f;
+    background: #ffffff;
+
+    word-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    line-height: 1.3;
+}
+
+h1 {
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid #eaecef;
+    font-size: 2em;
+}
+
+h2 {
+    padding-bottom: 0.25em;
+    border-bottom: 1px solid #eaecef;
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+p {
+    margin: 1em 0;
+}
+
+a {
+    color: #0969da;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+blockquote {
+    margin: 1em 0;
+    padding: 0.5em 1em;
+
+    border-left: 4px solid #d0d7de;
+
+    color: #57606a;
+    background: #f6f8fa;
+}
+
+code {
+    padding: 0.2em 0.4em;
+
+    border-radius: 4px;
+
+    background: #f6f8fa;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size: 0.9em;
+}
+
+pre {
+    padding: 16px;
+
+    overflow-x: auto;
+
+    border-radius: 6px;
+
+    background: #f6f8fa;
+
+    line-height: 1.5;
+}
+
+pre code {
+    padding: 0;
+
+    background: transparent;
+
+    font-size: 0.9em;
+}
+
+table {
+    width: 100%;
+
+    margin: 1.5em 0;
+
+    border-collapse: collapse;
+
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 8px 12px;
+
+    border: 1px solid #d0d7de;
+
+    text-align: left;
+}
+
+th {
+    font-weight: 600;
+    background: #f6f8fa;
+}
+
+tr:nth-child(even) {
+    background: #f6f8fa;
+}
+
+hr {
+    margin: 2em 0;
+
+    border: 0;
+    border-top: 1px solid #d0d7de;
+}
+
+ul,
+ol {
+    padding-left: 2em;
+}
+
+li {
+    margin: 0.3em 0;
+}
+
+strong {
+    font-weight: 700;
+}
+
+del {
+    color: #57606a;
+}
+
+sup {
+    line-height: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+@media print {
+
+    body {
+        max-width: none;
+        padding: 20px 30px;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    pre {
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+    }
+
+    table {
+        page-break-inside: avoid;
+    }
+
+    img {
+        page-break-inside: avoid;
+    }
+
+    h1,
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

@@ -1,0 +1,46 @@
+name: Build Release
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install markdown beautifulsoup4 playwright
+
+      - name: Install Chromium
+        run: |
+          python -m playwright install --with-deps chromium
+
+      - name: Build documents
+        run: |
+          python build.py
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "pack-${{ github.sha }}"
+          name: "Pack ${{ github.sha }}"
+          files: latest_release.zip
+          generate_release_notes: true
