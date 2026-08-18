@@ -3,6 +3,8 @@ import base64
 import mimetypes
 import shutil
 import zipfile
+import re
+import unicodedata
 
 import markdown
 from bs4 import BeautifulSoup
@@ -33,12 +35,40 @@ CSS_FILE = ROOT / "style.css"
 
 ZIP_FILE = ROOT / "latest_release.zip"
 
+# toc config
+def github_slug(text: str) -> str:
+
+    text = BeautifulSoup(
+        text,
+        "html.parser",
+    ).get_text()
+
+    text = unicodedata.normalize(
+        "NFKC",
+        text,
+    )
+
+    text = text.lower()
+
+    text = re.sub(
+        r"[^\w\u4e00-\u9fff -]",
+        "",
+        text,
+    )
+
+    text = re.sub(
+        r"\s+",
+        "-",
+        text,
+    )
+
+    return text
 
 # md to html
 
 def markdown_to_html(md_text: str) -> str:
 
-    return markdown.markdown(
+    html = markdown.markdown(
         md_text,
         extensions=[
             "extra",
@@ -46,11 +76,34 @@ def markdown_to_html(md_text: str) -> str:
             "fenced_code",
             "footnotes",
             "attr_list",
-            "toc",
         ],
         output_format="html",
     )
 
+    soup = BeautifulSoup(
+        html,
+        "html.parser",
+    )
+
+    used_ids = {}
+
+    for heading in soup.find_all(
+        ["h1", "h2", "h3", "h4", "h5", "h6"]
+    ):
+
+        slug = github_slug(
+            heading.get_text()
+        )
+
+        if slug in used_ids:
+            used_ids[slug] += 1
+            slug = f"{slug}-{used_ids[slug]}"
+        else:
+            used_ids[slug] = 0
+
+        heading["id"] = slug
+
+    return str(soup)
 
 # base64 encode
 
@@ -70,7 +123,6 @@ def image_to_base64(image_path: Path) -> str:
     )
 
     return f"data:{mime_type};base64,{encoded}"
-
 
 # embed images
 
@@ -115,7 +167,6 @@ def embed_images(
 
     return str(soup)
 
-
 # css
 
 def load_css() -> str:
@@ -123,7 +174,6 @@ def load_css() -> str:
     return CSS_FILE.read_text(
         encoding="utf-8"
     )
-
 
 # build full html
 
@@ -162,7 +212,6 @@ def build_full_html(
 </html>
 """
 
-
 # build pdf
 
 def build_pdf(
@@ -197,7 +246,6 @@ def build_pdf(
     )
 
     page.close()
-
 
 # build html file
 
@@ -238,7 +286,6 @@ def build_html_file(
     print(
         f"Generated: {output_file}"
     )
-
 
 # main
 
