@@ -130,6 +130,9 @@
 ## 反馈
 
 - **[PR](https://github.com/NySherSF/eeJLUer_guide/pulls)**
+
+   克隆仓库请尽量使用`git clone --sparse`，不拉取大体积文件夹`assets`，以免拉取缓慢
+
 - **[Issue](https://github.com/NySherSF/eeJLUer_guide/issues)**
 - **Email** : [NySherSF@proton.me](NySherSF@proton.me)
 
