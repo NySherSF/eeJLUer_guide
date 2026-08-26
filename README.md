@@ -63,31 +63,31 @@
 
 本文总体分成了：
 
-- `Timeline.md`
+- [`Timeline.md`](Timeline.md)
 
   按照时间顺序介绍从新生入学开始到毕业会经历的绝大部分重要事件
 
-- `Daily.md`
+- [`Daily.md`](Daily.md)
 
   列举了部分生活上可能遇到的问题和推荐的解决方案
 
-- `Learn.md`
+- [`Learn.md`](Learn.md)
 
   列举了部分学习上可能遇到的问题和推荐的解决方案
 
-- `Pitfalls.md`
+- [`Pitfalls.md`](Pitfalls.md)
 
   风险管理条目，叙述一些和官方陈述不一致或是官方未公开的事实
 
-- `Concepts.md`
+- [`Concepts.md`](Concept.md)
 
   列举了大部分本科阶段常见的概念以及其解释
 
-- `Resources.md`
+- [`Resources.md`](Resources.md)
 
   存放了电子专业好用的软件和网站的链接，以及大部分学校官方的链接
 
-- `Easy.md`
+- [`Easy.md`](Easy.md)
 
   专为家长准备，简要概括全文、重点讲解家长关心的事项。JLUer无需阅读此部分，但是推荐分享给家长阅读。
 
