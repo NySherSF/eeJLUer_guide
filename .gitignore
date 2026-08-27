@@ -3,3 +3,4 @@ latest_release.zip
 __pycache__/
 *.pyc
 .markdownlint.json
+.obsidian
